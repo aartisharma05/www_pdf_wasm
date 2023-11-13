@@ -6,10 +6,10 @@ onmessage = async function (e) {
     if (e.data.type === 1) {
         let f = e.data.f;
         let hashHex = "tmppdf";
-        if(crypto.subtle) {
+        if (crypto.subtle) {
             const hashBuffer = await crypto.subtle.digest("SHA-256", f);
             const hashArray = Array.from(new Uint8Array(hashBuffer));
-            hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");    
+            hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
         }
         const fName = hashHex.slice(0, hashHex.length / 2)
         const fRandom = hashHex.slice(hashHex.length / 2, hashHex.length)
@@ -17,7 +17,9 @@ onmessage = async function (e) {
         let stream = FS.open(filename, 'w+');
         FS.write(stream, f, 0, f.length, 0);
         FS.close(stream);
-        
+        if (pdf_parser) {
+            //Call dealloc
+        }
         pdf_parser = new Module.PDFParser(filename, fRandom);
         let result = pdf_parser.str_pdf_images();
         let files = result.split(",")

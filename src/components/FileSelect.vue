@@ -96,7 +96,4 @@ pageStore.pworker.onmessage = function (e) {
         <button v-if="!pageStore.worker_progress" @click="makeProcess">Convert</button>
         <button v-else disabled>Converting</button>
     </div>
-
-
-    
 </template>

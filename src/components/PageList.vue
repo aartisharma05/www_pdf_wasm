@@ -7,7 +7,7 @@ const pageStore = usePageStore()
 </script>
 <template>
     <div class="flex-container" v-if="pageStore.totalpages > 0">
-        <div class="flex-child">
+        <div class="flex-child" v-if="pageStore.nodata">
             <PageThumbnail v-for="(item, index) in pageStore.pages.pages" :item="item" :index="index" :key="item.pg" />
         </div>
         <div class="flex-child tpages" v-if="pageStore.nodata">
