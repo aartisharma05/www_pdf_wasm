@@ -31,6 +31,3 @@ jobs:
     - run: cd dist
     - uses: superfly/flyctl-actions/setup-flyctl@master
     - run: flyctl deploy
-
-
-
