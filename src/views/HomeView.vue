@@ -48,7 +48,7 @@ pageStore.pworker.onmessage = function (e) {
 
 <style scoped>
 .slide-fade-enter-active {
-  transition: opacity 4.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 .slide-fade-enter-from {
