@@ -5,6 +5,7 @@ export const usePageStore = defineStore('pdf', () => {
   const pworker = ref(null)
   const filename = ref(null)
   const pages = ref({ pages: [] })
+  const table_data = ref(null)
   const totalpages = computed(() => pages.value.pages.length)
   const filesize = ref(0)
 
@@ -44,5 +45,17 @@ export const usePageStore = defineStore('pdf', () => {
     pworker.value = worker
   }
 
-  return { work_flow_state, worker_image_process, worker_progress, worker_initialized, selectedPages, clearPages, addPage, pworker, filename, filesize, pages, totalpages, setFileName, setFileSize, setWorker }
+  function setTableData(data) {
+    table_data.value = data
+  }
+
+  function clearTableData() {
+    table_data.value = null
+  }
+
+  const isTable = computed(() => {
+    return table_data.value !== null
+  })
+
+  return { isTable, table_data, clearPages, addPage, setFileName, setFileSize, setWorker, clearTableData, setTableData, work_flow_state, worker_image_process, worker_progress, worker_initialized, selectedPages, pworker, filename, filesize, pages, totalpages }
 })
