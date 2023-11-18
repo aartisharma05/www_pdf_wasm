@@ -26,14 +26,36 @@ const exportTable = (e) => {
 
 <template>
   <div>
-    <button type="button"
-      class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-      @click="cancelProcess" v-if="pageStore.work_flow_state === 'LIST'">Cancel</button>
-    <button :disabled="pageStore.selectedPages.length == 0" class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button" v-if="pageStore.work_flow_state === 'LIST'" @click="makeProcess">Convert</button>
+    <Transition name="slide-fade">
+      <button type="button" class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+        @click="cancelProcess" v-if="pageStore.work_flow_state === 'LIST'">Cancel</button>
+    </Transition>
+    <Transition name="slide-fade">
+      <button :disabled="pageStore.selectedPages.length == 0"
+        class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
+        v-if="pageStore.work_flow_state === 'LIST'" @click="makeProcess">Convert
+      </button>
+    </Transition>
 
-    <button class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button" @click="showList" v-if="pageStore.work_flow_state === 'TABLE'">Back</button>
-    <button class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button" v-if="pageStore.work_flow_state === 'TABLE'" @click="exportTable">Export</button>
+    <Transition name="slide-fade">
+      <button class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
+        @click="showList" v-if="pageStore.work_flow_state === 'TABLE'">Back</button>
+    </Transition>
+    <Transition name="slide-fade">
+      <button class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
+        v-if="pageStore.work_flow_state === 'TABLE'" @click="exportTable">Export</button>
+    </Transition>
 
     <span v-if="pageStore.worker_progress">Converting</span>
   </div>
 </template>
+
+<style scoped>
+.slide-fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+}
+</style>
