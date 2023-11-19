@@ -15,7 +15,7 @@ pageStore.setWorker(worker);
         <div class="flex justify-between">
           <span class="flex items-center">
             <RouterLink to="/" class="pr-1">
-              <img src="assets/img/logo.svg" />
+              <img src="/assets/img/logo.svg" />
             </RouterLink>
             PDF Extract
           </span>
@@ -53,7 +53,7 @@ pageStore.setWorker(worker);
           <div class="flex items-center justify-between">
             <RouterLink to="/" class="-m-1.5 p-1.5">
               <span class="sr-only">PDF Extract</span>
-              <img src="assets/img/logo.svg" />
+              <img src="/assets/img/logo.svg" />
             </RouterLink>
             <div class="flex items-center">
               <RouterLink to="/register">
