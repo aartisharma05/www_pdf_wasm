@@ -36,7 +36,7 @@ pageStore.pworker.onmessage = function (e) {
 </script>
 
 <template>
-  <main>
+  <main class="flex-1 overflow-y-auto">
     <FileSelect />
     <Actions />
     <PageList />
