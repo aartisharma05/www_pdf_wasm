@@ -18,7 +18,7 @@ const previewFile = (e) => {
     <div class="container max-w-5xl mx-auto h-full my-4">
       <section>
         <div class="flex flex-col gap-y-6 mt-6 px-8 my-8">
-          <div v-if="!pageStore.worker_initialized" class="text-center h-full" >
+          <div v-if="!pageStore.worker_initialized" class="text-center h-full font-bold text-xl" >
           Loading....
           </div>
           <div class="bg-gray-100 rounded-md flex flex-col items-center justify-center py-10 ">
