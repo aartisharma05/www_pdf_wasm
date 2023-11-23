@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { usePageStore } from '@/stores/pdf'
+import { ref } from 'vue'
 
 const pageStore = usePageStore()
 const worker = new Worker(new URL('./worker.js', import.meta.url));
