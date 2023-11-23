@@ -18,9 +18,8 @@ const previewFile = (e) => {
     <div class="container max-w-5xl mx-auto h-full my-4">
       <section>
         <div class="flex flex-col gap-y-6 mt-6 px-8 my-8">
-          <div v-if="!pageStore.worker_initialized" class="text-center h-full" >
-          Loading....
-          </div>
+          <img v-if="!pageStore.worker_initialized" src="https://usagif.com/wp-content/uploads/loading-21.gif" alt="Loading..." class="mx-auto h-12" />
+         
           <div class="bg-gray-100 rounded-md flex flex-col items-center justify-center py-10 ">
        
            <div class="h-80 flex items-center justify-center">
