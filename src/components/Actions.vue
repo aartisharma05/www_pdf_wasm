@@ -69,7 +69,7 @@ pageStore.pworker.onmessage = function (e) {
     </Transition>
     <Transition name="slide-fade">
       <button class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
-        v-if="pageStore.work_flow_state === 'TABLE'" @click="exportTable">Export</button>
+        v-if="pageStore.work_flow_state === 'TABLE'" @click="exportTable" :disabled="pageStore.worker_progress">Export</button>
     </Transition>
 
     <span v-if="pageStore.worker_progress">Converting</span>

@@ -16,7 +16,7 @@ pageStore.setWorker(worker)
   <main class="flex-1 overflow-y-auto">
     <FileSelect v-if="pageStore.work_flow_state === 'LANDING'" />
     <Actions />
-    <Cards />
+    <Cards v-if="pageStore.work_flow_state === 'LANDING'" />
     <PageList />
     <Transition name="slide-fade">
       <Table v-if="pageStore.isTable" />
