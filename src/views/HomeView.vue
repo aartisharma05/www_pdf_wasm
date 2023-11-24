@@ -37,7 +37,7 @@ pageStore.pworker.onmessage = function (e) {
 
 <template>
   <main class="flex-1 overflow-y-auto">
-    <FileSelect />
+    <FileSelect v-if="pageStore.work_flow_state === 'LANDING'"/>
     <Actions />
     <PageList />
     <Transition name="slide-fade">

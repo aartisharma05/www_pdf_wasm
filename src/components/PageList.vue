@@ -6,7 +6,7 @@ const pageStore = usePageStore()
 
 </script>
 <template>
-    <div class="flex-container" v-if="pageStore.totalpages > 0">
+    <div class="flex-container">
         <div class="flex-child" v-if="pageStore.work_flow_state === 'LIST'">
             <PageThumbnail v-for="(item, index) in pageStore.pages.pages" :item="item" :index="index" :key="item.pg" />
         </div>
