@@ -4,14 +4,17 @@ import PageList from '../components/PageList.vue'
 import Actions from '../components/Actions.vue'
 import Table from '../components/Table.vue'
 import Cards from '../components/Cards.vue'
-
 import { usePageStore } from '@/stores/pdf'
+
+const worker = new Worker(new URL('../worker.js', import.meta.url))
 const pageStore = usePageStore()
+pageStore.setWorker(worker)
+
 </script>
 
 <template>
   <main class="flex-1 overflow-y-auto">
-    <FileSelect v-if="pageStore.work_flow_state === 'LANDING'"/>
+    <FileSelect v-if="pageStore.work_flow_state === 'LANDING'" />
     <Actions />
     <Cards />
     <PageList />
