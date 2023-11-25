@@ -13,9 +13,6 @@ const pageStore = usePageStore()
         <div class="flex-child tpages" v-if="pageStore.work_flow_state === 'LIST'">
             <Page v-for="(item, index) in pageStore.pages.pages" :item="item" :index="index" :key="item.pg" />
         </div>
-        <div class="flex-child ttable" id="table-container" v-if="pageStore.work_flow_state === 'TABLE'">
-
-        </div>
     </div>
 </template>
 <style>

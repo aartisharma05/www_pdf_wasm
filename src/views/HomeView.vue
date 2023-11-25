@@ -17,7 +17,9 @@ pageStore.setWorker(worker)
     <FileSelect v-if="pageStore.work_flow_state === 'LANDING'" />
     <Actions />
     <Cards v-if="pageStore.work_flow_state === 'LANDING'" />
-    <PageList />
+    <Transition name="slide-fade">
+      <PageList v-if="pageStore.work_flow_state === 'LIST'" />
+    </Transition>
     <Transition name="slide-fade">
       <Table v-if="pageStore.isTable" />
     </Transition>
