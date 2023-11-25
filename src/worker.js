@@ -1,4 +1,4 @@
-importScripts('./pdf_export_wasm.js');
+importScripts('/assets/pdf_export_wasm.js');
 
 var pdf_parser;
 
