@@ -12,7 +12,7 @@ export const usePageStore = defineStore('pdf', () => {
   const worker_initialized = ref(false)
   const worker_progress = ref(false)
   const worker_image_process = ref(false)
-  const work_flow_state = "LANDING" // "LIST" , "TABLE"
+  const work_flow_state = ref("LANDING") // "LIST" , "TABLE"
 
   const selectedPages = computed(() => {
     const _sPages = pages.value.pages.filter((page) => {
