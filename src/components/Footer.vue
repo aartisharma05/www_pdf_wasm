@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <footer class="bg-neutral-200 text-center dark:bg-white sticky w-full border-t border-gray-300">
+  <footer class="bg-neutral-200 text-center dark:bg-white sticky bottom-0 w-full border-t border-gray-300">
     <div class="container mx-auto max-w-5xl p-8">
       <nav class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
         <ul class="flex flex-col text-left">

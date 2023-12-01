@@ -51,24 +51,24 @@ pageStore.pworker.onmessage = function (e) {
 </script>
 
 <template>
-  <div>
+  <div class="flex justify-end max-w-5xl mx-auto py-4 px-8">
     <Transition name="slide-fade">
-      <button type="button" class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+      <button type="button" class="text-white bg-red-700 font-medium rounded-md text-sm px-5 py-2.5 me-2 my-2"
         @click="cancelProcess" v-if="pageStore.work_flow_state === 'LIST'">Cancel</button>
     </Transition>
     <Transition name="slide-fade">
       <button :disabled="pageStore.selectedPages.length == 0"
-        class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
+        class="text-white bg-green-700 font-medium rounded-md text-sm px-5 py-2.5 me-2 my-2" type="button"
         v-if="pageStore.work_flow_state === 'LIST'" @click="makeProcess">Convert
       </button>
     </Transition>
 
     <Transition name="slide-fade">
-      <button class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
+      <button class="text-white bg-red-700 font-medium rounded-md text-sm px-5 py-2.5 me-2 my-2" type="button"
         @click="showList" v-if="pageStore.work_flow_state === 'TABLE'">Back</button>
     </Transition>
     <Transition name="slide-fade">
-      <button class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2" type="button"
+      <button class="text-white bg-green-700 font-medium rounded-md text-sm px-5 py-2.5 me-2 my-2" type="button"
         v-if="pageStore.work_flow_state === 'TABLE'" @click="exportTable" :disabled="pageStore.worker_progress">Export</button>
     </Transition>
 

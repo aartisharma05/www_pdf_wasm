@@ -33,7 +33,10 @@ const previewFile = (e) => {
             
            </div>
           </div>
-           <span v-if="pageStore.worker_image_process">Loading pdf file</span>
+           <!-- <span v-if="pageStore.worker_image_process">Loading pdf file</span> -->
+           
+           <span v-if="pageStore.worker_image_process">
+          <img src="https://i.gifer.com/Vp3R.gif" alt="loading" class="mx-auto h-12"/></span>
         </div>
       </section>
     </div>

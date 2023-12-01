@@ -5,12 +5,12 @@ import { usePageStore } from '@/stores/pdf'
 const pageStore = usePageStore()
 
 </script>
-<template>
-    <div class="flex-container">
-        <div class="flex-child" v-if="pageStore.work_flow_state === 'LIST'">
+<template class="mx-auto min-h-screen">
+    <div class="flex container max-w-5xl mx-auto rounded-md h-96 px-8">
+        <div class=" p-4 overflow-y-scroll bg-slate-200" v-if="pageStore.work_flow_state === 'LIST'">
             <PageThumbnail v-for="(item, index) in pageStore.pages.pages" :item="item" :index="index" :key="item.pg" />
         </div>
-        <div class="flex-child tpages" v-if="pageStore.work_flow_state === 'LIST'">
+        <div class=" p-4 tpages overflow-y-scroll bg-slate-400" v-if="pageStore.work_flow_state === 'LIST'">
             <Page v-for="(item, index) in pageStore.pages.pages" :item="item" :index="index" :key="item.pg" />
         </div>
     </div>
@@ -19,7 +19,6 @@ const pageStore = usePageStore()
 .flex-container {
     display: flex;
 }
-
 
 table,
 th,
@@ -47,3 +46,4 @@ table#alter th {
 }
 
 </style>
+
