@@ -40,5 +40,5 @@ onMounted(() => {
 </script>
 
 <template>
-    <table ref="mtable"></table>
+    <table ref="mtable" class="max-w-5xl mx-auto px-8 py-4 my-2"></table>
 </template>
